@@ -1,0 +1,19 @@
+{
+  "if": {
+    "field": "type",
+    "equals": "Microsoft.Storage/storageAccounts"
+  },
+  "then": {
+    "effect": "modify",
+    "details": [
+      {
+        "field": "Microsoft.Storage/storageAccounts/deleteRetentionPolicy.enabled",
+        "value": "true"
+      },
+      {
+        "field": "Microsoft.Storage/storageAccounts/deleteRetentionPolicy.days",
+        "value": "90"
+      }
+    ]
+  }
+}
